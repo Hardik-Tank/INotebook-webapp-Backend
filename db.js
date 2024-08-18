@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
-const URL =
-  "mongodb+srv://hardiktank2003:hardiktank1412@ibooks.2hn3r.mongodb.net/?retryWrites=true&w=majority&appName=IBooks";
+const URL = process.env.MONGO_URL;
 
 const connectDB = async () => {
   try {

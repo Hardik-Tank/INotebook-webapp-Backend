@@ -7,7 +7,7 @@ var jwt = require("jsonwebtoken");
 var fetchuser = require("../middleware/fetchuser");
 const User = require("../Models/User");
 
-const JWT_SECRET = "Harryisagoodb$oy";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // ROUTE 1: Create a User using: POST "/api/auth/createuser". No login required
 router.post(
@@ -52,7 +52,7 @@ router.post(
 
       // res.json(user)
       // save the jwt token
-      res.json({ authtoken })
+      res.json({ authtoken });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error");
@@ -120,4 +120,4 @@ router.post("/getuser", fetchuser, async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-module.exports = router;
+module.exports = router
