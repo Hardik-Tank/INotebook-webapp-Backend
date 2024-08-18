@@ -1,4 +1,4 @@
-const express = require("express");
+  const express = require("express");
 
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
@@ -120,4 +120,4 @@ router.post("/getuser", fetchuser, async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-module.exports = router
+module.exports = router;
